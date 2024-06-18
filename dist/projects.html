@@ -1,0 +1,747 @@
+<!DOCTYPE html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta name="keywords" lang="en-gb" content="Portfolio, Design, Development, eCommerce, ArtTech, UI, UX">
+    <meta name="copyright" content="Chris Doughty">
+    <meta name="author" content="Chris Doughty">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Chris Doughty Portfolio</title>
+  </head>
+  <body onscroll="percentageScroll()" data-name="Project Library">
+
+    
+      <nav>
+        <button id="openMenu" onclick="openMenu()">
+          <img alt="icon to open menu" class="open" src="./icons/hamburgerLight.svg"/>
+        </button>
+
+        <div id="overlay">
+          <button id="closeMenu" onclick="closeMenu()">
+          <img alt="icon to close menu" class="close" src="./icons/closeLight.svg"/>
+        </button>
+          <ul>
+            <li>
+              <a href="/index.html">
+                Home
+              </a>
+            </li>
+            
+              <li>
+                <a href="/projects.html">
+                  projects
+                </a>
+              </li>
+            
+              <li>
+                <a href="/process.html">
+                  process
+                </a>
+              </li>
+            
+            <li>
+              <a href="#scrollFooter" onClick="closeMenu()">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+
+      <nav style="background-color: " class="desktop">
+        <ul>
+          <li>
+              <a href="/index.html">
+                Home
+              </a>
+            </li>
+            
+              <li>
+                <a href="/projects.html">
+                  projects
+                </a>
+              </li>
+            
+              <li>
+                <a href="/process.html">
+                  process
+                </a>
+              </li>
+            
+            <li>
+              <a href="#scrollFooter">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+    
+
+    <div class="container">
+
+      <div class="content background-lightBlue">
+
+        
+
+        <div class="hero small">
+          
+          <h1>Project Library</h1>
+
+          
+
+        </div>
+        
+      </div>
+
+    
+
+    <div class="content background-peach nonHero">
+        <img alt="" class="divider" src="/images/lightBlue-peach.svg"/>
+        
+        <div class="itemsGrid background-peach ecom">
+            <h2 class="dark">Ecommerce</h2>
+            
+            
+
+                <div id="SweatyBetty" class="gridItem Sweaty Betty">
+                    
+                    <a href="./projects/SweatyBetty.html">
+                    
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for Sweaty Betty" src="./images/sb-list-image.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>Sweaty Betty</h2>
+                        </div>
+                        
+                    </a>                    
+                </div>
+
+            
+
+                <div id="RMWilliams" class="gridItem RM Williams">
+                    
+                    <a href="./projects/RMW.html">
+                    
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for RM Williams" src="/projects/RMW/rmw-list-image.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>RM Williams</h2>
+                        </div>
+                        
+                    </a>                    
+                </div>
+
+            
+
+                <div id="FisherPaykel" class="gridItem Fisher and Paykel">
+                    
+                    <a href="./projects/FisherPaykel.html">
+                    
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for Fisher and Paykel" src="./projects/FP/fp-list-image.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>Fisher and Paykel</h2>
+                        </div>
+                        
+                    </a>                    
+                </div>
+
+            
+
+                <div id="OrlebarBrown" class="gridItem Orlebar Brown">
+                    
+                    <a href="./projects/OrlebarBrown.html">
+                    
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for Orlebar Brown" src="./projects/OB/ob-list-image.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>Orlebar Brown</h2>
+                        </div>
+                        
+                    </a>                    
+                </div>
+
+            
+
+                <div id="Treasury" class="gridItem Treasury Wine">
+                    
+                    <a onclick="
+                    
+                        let target = this;
+
+                        if (target.classList.contains('popupOpen')){
+                            target.classList.remove('popupOpen');
+                            target.closest('.content').classList.remove('active');
+                            target.closest('body').classList.remove('popupActive');
+                        } else {
+                            target.classList.add('popupOpen');
+                            target.closest('.content').classList.add('active');
+                            target.closest('body').classList.add('popupActive');
+                        }
+                    
+                    ">
+                        <!-- this.closest('a').classList.toggle('popupOpen'); this.closest('.content').classList.toggle('active'); this.closest('body').classList.toggle('popupActive'); -->
+                    
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for Treasury Wine" src="./projects/TWE/twe-list-image.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>Treasury Wine</h2>
+                        </div>
+                        
+                            <div class="popupContainer">
+    <div class="popup">
+
+        <div class="clear">
+            <span class="up"></span>
+            <span class="across"></span>
+        </div>
+        <div class="content test class">
+            
+            <img src="./projects/TWE/twe-list-image.png"/>
+            
+            <h1>Treasury Wine</h1>
+            <ul>
+                
+                <li class="skills">
+                Adobe XD
+                </li>
+                
+                <li class="skills">
+                UI
+                </li>
+                
+                <li class="skills">
+                Atomic Design
+                </li>
+                
+                <li class="skills">
+                International
+                </li>
+                      
+            </ul>
+            <p>TWE is an umbrella brand consisting of around 50 wineries around the globe, including Wolf Blass and Blossom Hill.  Each of the US brands needed redesigning in a very tight timescale. Working with teams in Australia and the US an ultra-efficient atomic styleguide was produced for each brand, allowing for 12 site launches in as many weeks.</p>
+        </div>
+    </div>
+</div>
+                        
+                    </a>                    
+                </div>
+
+            
+
+                <div id="TradeState" class="gridItem Retail Analytics">
+                    
+                    <a onclick="
+                    
+                        let target = this;
+
+                        if (target.classList.contains('popupOpen')){
+                            target.classList.remove('popupOpen');
+                            target.closest('.content').classList.remove('active');
+                            target.closest('body').classList.remove('popupActive');
+                        } else {
+                            target.classList.add('popupOpen');
+                            target.closest('.content').classList.add('active');
+                            target.closest('body').classList.add('popupActive');
+                        }
+                    
+                    ">
+                        <!-- this.closest('a').classList.toggle('popupOpen'); this.closest('.content').classList.toggle('active'); this.closest('body').classList.toggle('popupActive'); -->
+                    
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for Retail Analytics" src="./projects/TS/ts-list-image.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>Retail Analytics</h2>
+                        </div>
+                        
+                            <div class="popupContainer">
+    <div class="popup">
+
+        <div class="clear">
+            <span class="up"></span>
+            <span class="across"></span>
+        </div>
+        <div class="content test class">
+            
+            <img src="./projects/TS/logoImage.png"/>
+            
+            <h1>Retail Analytics</h1>
+            <ul>
+                
+                <li class="skills">
+                Big Data
+                </li>
+                
+                <li class="skills">
+                QA
+                </li>
+                
+                <li class="skills">
+                Git
+                </li>
+                
+                <li class="skills">
+                Data Visualisation
+                </li>
+                
+                <li class="skills">
+                JS
+                </li>
+                      
+            </ul>
+            <p>Tradestate is an in-house analytics dashboard providing data such as Store Status, Average Order Value and Conversion Rates.Working with developers, project managers and tech leads, I assisted the design and development of new dashboard widgets - using d3,js to visualise information in a considered, easy to digest and engaging way.</p>
+        </div>
+    </div>
+</div>
+                        
+                    </a>                    
+                </div>
+
+            
+
+        </div>
+        
+    </div>
+
+    <div class="content background-lightGreen nonHero">
+        <img alt="" class="divider" src="/images/peach-lightGreen.svg"/>
+        
+        <div class="itemsGrid background-lightGreen artTech">
+            <h2 class="dark">ArtTech</h2>
+            
+
+                <div class="gridItem Royal Scottish Academy">
+                    <a href="./projects/RoyalScottishAcademy.html">
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for Royal Scottish Academy" src="./projects/RSA/rsa-list-image.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>Royal Scottish Academy</h2>
+    
+                        </div>
+                    </a>
+                </div>
+            
+
+                <div class="gridItem Maruani Mercier">
+                    <a href="./projects/MaruaniMercier.html">
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for Maruani Mercier" src="./projects/MM/mm-list-image.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>Maruani Mercier</h2>
+    
+                        </div>
+                    </a>
+                </div>
+            
+
+                <div class="gridItem Gow Langsford">
+                    <a href="./projects/GowLangsford.html">
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for Gow Langsford" src="./projects/GowLangsford/gl-list-image2.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>Gow Langsford</h2>
+    
+                        </div>
+                    </a>
+                </div>
+            
+
+                <div class="gridItem Desiree Dolron">
+                    <a href="./projects/DesireeDolron.html">
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for Desiree Dolron" src="./projects/DD/dd-list-image2.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>Desiree Dolron</h2>
+    
+                        </div>
+                    </a>
+                </div>
+            
+
+                <div class="gridItem Selavy">
+                    <a href="./projects/Selavy.html">
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for Selavy" src="./projects/Selavy/svy-list-image.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>Selavy</h2>
+    
+                        </div>
+                    </a>
+                </div>
+            
+
+                <div class="gridItem Charles Moffett">
+                    <a href="./projects/CharlesMoffett.html">
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for Charles Moffett" src="./projects/CM/cm-list-image.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>Charles Moffett</h2>
+    
+                        </div>
+                    </a>
+                </div>
+            
+        </div>
+        
+    </div>
+
+
+    <div class="content background-lightBlue nonHero">
+        <img alt="" class="divider" src="/images/lightGreen-lightBlue.svg"/>
+        
+        <div class="itemsGrid background-lightBlue other">
+            <h2 class="dark">Other</h2>
+            
+
+                <div class="gridItem MagentoDesignSystem">
+                    
+                    <a onclick="this.classList.toggle('popupOpen'); this.closest('.content').classList.toggle('active'); this.closest('body').classList.toggle('popupActive');">
+                    
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for Magento Design System" src="./projects/Magento/mg-list-image.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>Magento Design System</h2>
+    
+                        </div>
+                        
+                            <div class="popupContainer">
+    <div class="popup">
+
+        <div class="clear">
+            <span class="up"></span>
+            <span class="across"></span>
+        </div>
+        <div class="content test class">
+            
+            <img src="./projects/Magento/mg-popup-image.jpg"/>
+            
+            <h1>Magento Design System</h1>
+            <ul>
+                
+                <li class="skills">
+                Sketch
+                </li>
+                
+                <li class="skills">
+                Training
+                </li>
+                
+                <li class="skills">
+                Atomic Design
+                </li>
+                
+                <li class="skills">
+                DSM
+                </li>
+                
+                <li class="skills">
+                UI
+                </li>
+                      
+            </ul>
+            <p>In order to streamline the design process for Magento projects, a hyper efficient, flexible and automatable design system was created in Sketch and InVision’s Design System Manager. Working very closely with developers, this approach could potentially reducing the design time required for a simple Magento project project in half.</p>
+        </div>
+    </div>
+</div>
+                        
+                    </a>
+                </div>
+            
+
+                <div class="gridItem DJA">
+                    
+                    <a onclick="this.classList.toggle('popupOpen'); this.closest('.content').classList.toggle('active'); this.closest('body').classList.toggle('popupActive');">
+                    
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for PDF Builder" src="./projects/DJA/dja-list-image.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>PDF Builder</h2>
+    
+                        </div>
+                        
+                            <div class="popupContainer">
+    <div class="popup">
+
+        <div class="clear">
+            <span class="up"></span>
+            <span class="across"></span>
+        </div>
+        <div class="content test class">
+            
+            
+            <h1>PDF Builder</h1>
+            <ul>
+                
+                <li class="skills">
+                WordPress
+                </li>
+                
+                <li class="skills">
+                Training
+                </li>
+                
+                <li class="skills">
+                Consulting
+                </li>
+                
+                <li class="skills">
+                JS
+                </li>
+                
+                <li class="skills">
+                PHP
+                </li>
+                
+                <li class="skills">
+                Management
+                </li>
+                      
+            </ul>
+            <p>DJA wanted a custom Wordpress integration for their new site - allowing users to create and download PDF’s of select projects they had case studies for. Elements are stored in the browser using IndexedDB. Upon download, that stored data is retrieved from local browser storage and populated into a custom PDF template using pdfMake.js.</p>
+        </div>
+    </div>
+</div>
+                        
+                    </a>
+                </div>
+            
+
+                <div class="gridItem ContentAssets">
+                    
+                    <a onclick="this.classList.toggle('popupOpen'); this.closest('.content').classList.toggle('active'); this.closest('body').classList.toggle('popupActive');">
+                    
+                        <div class="hexImage hexMask">
+                            <img alt="project link image for Content Assets" src="./projects/Content/ca-list-image.jpg"/>
+                        </div>
+                        <div class="itemContent">
+                            <h2>Content Assets</h2>
+    
+                        </div>
+                        
+                            <div class="popupContainer">
+    <div class="popup">
+
+        <div class="clear">
+            <span class="up"></span>
+            <span class="across"></span>
+        </div>
+        <div class="content test class">
+            
+            <img src="./projects/Content/ca-popup-image.jpg"/>
+            
+            <h1>Content Assets</h1>
+            <ul>
+                
+                <li class="skills">
+                HTML
+                </li>
+                
+                <li class="skills">
+                SASS
+                </li>
+                
+                <li class="skills">
+                Gulp
+                </li>
+                
+                <li class="skills">
+                JS
+                </li>
+                
+                <li class="skills">
+                Documentation
+                </li>
+                
+                <li class="skills">
+                Training
+                </li>
+                      
+            </ul>
+            <p>Content assets are the images, text and videos you see in Salesforce sites, and are typically managed by non-technical people. As such, they must be easy to populate, amend and customise. I created and demonstrated easy to use content assets to a wide range of clients - eliminating the need for developers when it comes to swapping out static content.</p>
+        </div>
+    </div>
+</div>
+                        
+                    </a>
+                </div>
+            
+            <!-- <div class="hexMask">
+                <img src="./images/cm-list-image.jpeg"/>
+            </div> -->
+        </div>
+        
+    </div>
+
+
+
+
+<footer id="scrollFooter">
+    <div class="buttonContainer">
+        <div class="button lightBlue big invert">
+            <a class="buttonLink lightBlue" href="/projects.html">View More</a>
+        </div>
+    
+        <div class="button lightBlue big ">
+            <a class="buttonLink lightBlue" href="mailto:hello@designerdoughty.com">Get In Touch</a>
+        </div>
+    </div>
+    <div class="subFooter">
+                <ul>
+          <a target="blank" href="https://uk.linkedin.com/in/designerdoughty">
+            <li class="linkedin">DesignerDoughty</li>
+          </a>
+          <a href="mailto:hello@designerdoughty.com">
+            <li class="email">hello@designerdoughty.com</li>
+          </a>
+          <a>
+            <li class="copyright">Chris Doughty 2023</li>
+            </a>
+        </ul>
+        <div class="subText">
+            <p>Made by me, not squarespace :) </p>
+        </div>
+    </div>
+</footer>
+
+    
+    </div>
+
+
+
+
+   
+
+<script>
+  function openMenu() {
+    var trigger = document.getElementById("openMenu");
+    var overlay = document.getElementById("overlay");
+
+    trigger.classList.add("open");
+    overlay.classList.add("open");
+  }
+
+  function closeMenu() {
+    var trigger = document.getElementById("closeMenu");
+    var overlay = document.getElementById("overlay");
+
+    trigger.classList.remove("open");
+    overlay.classList.remove("open");
+  }
+
+  function percentageScroll() {
+    if (document.querySelector('[data-name="Design Process"]')) {
+      let currentPos = document.body.scrollTop;
+      let totalHeight = document.body.scrollHeight;
+
+      let viewportOffset = totalHeight - window.innerHeight;
+
+      let difference = viewportOffset - currentPos;
+      let division = difference / viewportOffset;
+
+      let currentPer = 1 - division;
+
+      if( currentPer < 0.20 ) {
+          document.querySelectorAll('.hexShape')[0].classList.add('active');
+          document.querySelectorAll('.hexShape')[1].classList.remove('active');
+          document.querySelectorAll('.hexShape')[2].classList.remove('active');
+          
+      } else if(currentPer > 0.21 && currentPer < 0.29) {
+          document.querySelectorAll('.hexShape')[0].classList.remove('active');
+          document.querySelectorAll('.hexShape')[1].classList.add('active');
+          document.querySelectorAll('.hexShape')[2].classList.remove('active');
+          
+      } else if(currentPer > 0.29 && currentPer < 0.35) {
+          document.querySelectorAll('.hexShape')[0].classList.remove('active');
+          document.querySelectorAll('.hexShape')[1].classList.remove('active');
+          document.querySelectorAll('.hexShape')[2].classList.add('active');
+      } else if(currentPer > 0.70 && currentPer < 0.75) {
+          document.querySelectorAll('.imageWrapper')[0].classList.add('active');
+          document.querySelectorAll('.imageWrapper')[1].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[2].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[3].classList.remove('active');
+
+      }  else if(currentPer > 0.80 && currentPer < 0.85) {
+          document.querySelectorAll('.imageWrapper')[0].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[1].classList.add('active');
+          document.querySelectorAll('.imageWrapper')[2].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[3].classList.remove('active');
+
+      } else if(currentPer > 0.81 && currentPer < 0.91) {
+          document.querySelectorAll('.imageWrapper')[0].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[1].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[2].classList.add('active');
+          document.querySelectorAll('.imageWrapper')[3].classList.remove('active');
+
+      } else if(currentPer > 0.95 && currentPer < 0.99) {
+          document.querySelectorAll('.imageWrapper')[0].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[1].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[2].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[3].classList.add('active');
+      } 
+  }
+}
+  
+
+if (document.querySelector('[data-name="Design Process"]')) {
+
+  let size = window.innerWidth;
+
+  if(size > 1280) {
+  
+      onmousemove = function(e) {
+        
+          const mouseX = e.clientX;
+          const diffX = window.innerWidth - mouseX;
+          const xPercentage = diffX / window.innerWidth * 100;
+              
+          const mouseY = e.clientY;
+          const diffY = window.innerWidth - mouseY;
+          const yPercentage = diffY / window.innerWidth * 100;
+
+          const boundary = document.getElementById('outer').getBoundingClientRect();
+          
+          const inner = document.getElementById('inner');
+
+          yMin = -30;
+          yMax = 30;
+
+          xMin = -35;
+          xMax = 35;
+
+          const ySinglePercent = 0.6;
+          const xSinglePercent = 0.7;
+
+          const yOffset = ySinglePercent * yPercentage;
+          const xOffset = xSinglePercent * xPercentage;
+
+          inner.setAttribute('style', 'top: '+ yOffset +'; left: '+ xOffset +'')
+      }
+    }
+}
+
+
+  
+</script>    
+
+  </body>
+</html>
+
+

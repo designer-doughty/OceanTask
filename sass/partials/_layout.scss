@@ -1,7 +1,5 @@
     @import './partials/variables';
 
-    
-
     .container {
         position: absolute;
         left: 0px;
@@ -55,20 +53,6 @@
         }
     }
 
-    .hexMask {
-        width: 100%;
-        -webkit-mask-image: url(/images/testMask.png);
-        mask-image: url(/images/testMask.png);
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        -webkit-mask-size: 100%;
-        mask-size: 100%;
-        
-        img {
-            width: 100%;
-            // min-height: 50vw;
-        }
-    }
 
 
     .content.background-peach::after {
