@@ -9,3 +9,55 @@ h1 {
 p {
     font-family: $body-font-family;
 }
+
+a {
+    font-family: $link-font-family;
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+    border-radius: 30px;
+    -webkit-font-smoothing: antialiased;
+}
+
+a.light {
+    color: white;
+    border-color: white;
+}
+
+a.dark {
+    color: black;
+    border: black;
+}
+
+a.bordered {
+    border: 2px solid;
+    border-radius: 30px;
+}
+
+a.solidBlack {
+    background: #202125;
+    color: white;
+}
+
+a.solidWhite {
+    background: white;
+    color: #202125;
+}
+
+a.fullwidth {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+
+}
+
+body.background_grey {
+    background-color: #202125;
+}

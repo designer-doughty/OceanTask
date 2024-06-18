@@ -1,85 +1,27 @@
 {% extends "content-layout.njk" %}
 
-{% set page_keywords = "Portfolio, Design, Development, eCommerce, ArtTech, UI, UX" %}
-{% set page_description = "Portfolio Home Page" %}
-{% set page_title = "Hi, I'm Chris" %}
-{% set heroColour = "primaryBlue" %}
-{% set headerColour = "#232835" %}
+{% set page_keywords = "Car, Configurator, OceanOutdoor" %}
+{% set page_description = "Ocean Task" %}
+{% set page_title = "index" %}
+{% set background_colour = "red" %}
 
-
-{% block description %}
-<div class="description">
-    <p>I've spent the last few years applying a robust design and development process for a wide range of clients in the growing world of ArtTech. Before this, I was immersed in the world of eCommerce - designing for retail juggernauts using both Salesforce and Magento.</p>
-</div>
-{% endblock %}
 
 {% block pageContent %}
-    <div class="content background-peach featuredItems nonHero">
-        <img alt="" class="divider" src="/images/blue-peach.svg"/>
-
-        <div class="itemsGrid background-peach">
-            {% for name, item in ecomProjects %}
-                {% if item.projectValues.liveOnHome == true %}
-                    <div class="gridItem {{item.projectValues.title}}">
-                        <a href="{{item.projectValues.page_link}}.html">
-                    
-                        <div class="hexImage hexMask">
-                            <img alt="image linking to project {{item.projectValues.title}}" src="{{item.projectValues.list_image_url}}"/>
-                        </div>
-                        </a>
-                        <div class="itemContent">
-                            <h2>{{item.projectValues.title}}</h2>
-                            <p>{{item.projectValues.list_description}}</p>
-                            <ul>
-                                {% for x in item.projectValues.skills %}
-                                    <li class="skills">{{x}}</li>
-                                {% endfor %}
-                            </ul>
-
-                            <div class="button peach">
-                                <a class="buttonLink peach" href="{{item.projectValues.page_link}}.html">Read More</a>
-                            </div>
-
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
+    <div class="content indexPage">
+        <div class="backgroundImage">
+            <img src="/images/indexBG.jpg"/>
         </div>
-        
-    </div>
 
-    <div class="content background-lightBlue featuredItems nonHero">
-        <img alt="" class="divider" src="/images/peach-lightBlue.svg"/>
-        
-        <div class="itemsGrid">
-            {% for name, item in ArtTech %}
-                {% if item.projectValues.liveOnHome == true %}
-                    <div class="gridItem {{item.projectValues.title}}">
-                        <a href="{{item.projectValues.page_link}}">
-                            <div class="hexImage hexMask">
-                                <img alt="image linking to project {{item.projectValues.title}}" src="{{item.projectValues.list_image_url}}"/>
-                            </div>
-                        </a>
-                        <div class="itemContent">
-                            <h2>{{item.projectValues.title}}</h2>
-                            <p>{{item.projectValues.list_description}}</p>
-                            <ul>
-                                {% for x in item.projectValues.skills %}
-                                    <li class="skills">{{x}}</li>
-                                {% endfor %}
-                            </ul>
-
-                            <div class="button lightBlue">
-                                <a class="buttonLink lightBlue" href="{{item.projectValues.page_link}}.html">Read More</a>
-                            </div>
-
-                        </div>
-                    
-                    </div>
-                {% endif %}
-            {% endfor %}
+        <div class="buttons">
+            <ul>
+                <li>
+                    <a class="fullwidth facebook bordered light" href="list.html">Login with Facebook</a>
+                    <a class="fullwidth instagram bordered light" href="list.html">Login with Instagram</a>
+                    <a class="fullwidth email bordered light" href="list.html">Proceed with email</a>
+                </li>
+            </ul>
+            
         </div>
-        
     </div>
 {% endblock %}
 
