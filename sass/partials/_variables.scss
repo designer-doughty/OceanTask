@@ -1,31 +1,25 @@
 //font-families
 @font-face {
-font-family: 'Karma';
+font-family: 'Koulen';
 font-weight: 500;
-src: url('/fonts/karma/Karma-Medium.woff2'),
-    url('/fonts/karma/Karma-Medium.woff'),
-    url('/fonts/karma/Karma-Medium.ttf'),
-    url('/fonts/karma/Karma-Medium.otf');
+src: url('/fonts/Koulen/Koulen-Regular.woff2'),
+    url('/fonts/Koulen/Koulen-Regular.woff'),
+    url('/fonts/Koulen/Koulen-Regular.ttf'),
+    url('/fonts/Koulen/Koulen-Regular.otf');
 }
 
 @font-face {
-font-family: 'Inter';
-font-weight: 600;
-src: url('/fonts/inter/Inter-SemiBold.ttf');
+font-family: 'AvenirNext';
+src: url('/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff2'),
+    url('/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff'),
+    url('/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.ttf'),
+    url('/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.otf')
 }
 
-@font-face {
-	font-family: 'Dala Floda Web';
-	src: url('../fonts/dalaFlodaWeb/DalaFloda-RomanNo2-Web.woff2') format('woff2'),
-		 url('../fonts/dalaFlodaWeb/DalaFloda-RomanNo2-Web.woff') format('woff');
-	font-weight: 500;
-	font-style: normal;
-}
 //standard factors
 $half : 0.5;
 $whole : 1;
 $double : 2;
-
 
 //breakpoints
 $small : 320px;
@@ -67,7 +61,7 @@ $lightGreen: #C2E787;
 $link-size: #{fluid(11px, 11px)};
 $link-color: $primary-invert;
 $link-underline: none;
-$link-font-family: 'inter';
+$link-font-family: 'Koulen';
 $link-text-transform: uppercase;
 $link-letter-spacing: 1px;
 
@@ -77,23 +71,21 @@ $button-border: 0;
 
 //display headings
 $display-heading-font-size: #{fluid($font-size-large, $font-size-xl)};
-$display-heading-font-family: 'Dala Floda Web';
+$display-heading-font-family: 'Koulen';
 $display-heading-font-weight: normal;
-$display-heading-font-color: $primary-invert;
 $display-heading-line-height: $line-height-wetsuit;
 
 //large allcaps
 $allcaps-heading-font-size: #{fluid($font-size-small, $font-size-xs)};
-$allcaps-heading-font-family: 'Inter';
+$allcaps-heading-font-family: 'Koulen';
 $allcaps-heading-font-weight: normal;
 $allcaps-heading-line-height: $line-height-normal;
 $allcaps-heading-transform: uppercase;
 $allcaps-letter-spacing: 5.25px;
 
-
 //large headings
 $large-heading-font-size: #{fluid($font-size-smegular, $font-size-regular)};
-$large-heading-font-family: 'Dala Floda Web';
+$large-heading-font-family: 'Koulen';
 $large-heading-font-weight: normal;
 
 //small headings
@@ -102,14 +94,10 @@ $small-heading-font-size: $font-size-small;
 //body text
 $body-text-font-size: #{fluid($font-size-xs, $font-size-small)};
 $body-text-color: $primary-invert;
-$body-font-family: 'Karma';
+$body-font-family: 'AvenirNext';
 
 //container padding and max width etc..
 $container-padding : 0px #{fluid($spacing-xxs, $spacing-small)} 0px #{fluid($spacing-xxs, $spacing-small)};
 
 //container padding specific direction
 $container-left-right-padding : #{fluid($spacing-xxs, $spacing-small)}
-
-
-
-

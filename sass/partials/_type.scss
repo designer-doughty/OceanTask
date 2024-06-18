@@ -56,29 +56,3 @@ h6 {
   margin-bottom: 0;
   font-weight: 400;
 }
-
-
-
-
-
-a {
-  text-decoration: none;
-  color: none;
-}
-
-.content.nonHero {
-  .itemsGrid {
-    h2 {
-      text-align: center;
-      width: 100%;
-      font-size: clamp(2.25rem, 6.88vw + 0.88rem, 5rem);
-      font-family: $large-heading-font-family;
-      font-weight: normal;
-      line-height: 1em;
-    }
-
-    h3 {
-      font-size: $font-size-smegular;
-    }
-  }
-}
