@@ -1,0 +1,106 @@
+@import './partials/variables';
+
+footer {
+    position: relative;
+    background: $lightBlue;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    padding-top: $spacing-regular;
+
+    ul {
+        padding-left: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        a li {
+        display: inline-flex;
+        font-family: $link-font-family;
+        font-size: clamp(0.69rem, 0vw + 0.69rem, 0.69rem);
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-left: $spacing-xs;
+        position: relative;
+        margin-bottom: 20px;
+        }
+
+        
+    
+        li:first-child {
+            padding-left: 0;
+        }
+    
+        li::before {
+            height: 20px;
+            width: 20px;
+            background-size: 20px;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: -30px;
+            top: -5px;
+        }
+    
+        li.linkedin::before {
+            content: "";
+            background-image: url("../icons/IconsLight=Linked In.svg");
+        }
+    
+        li.email::before {
+            content: "";
+            background-image: url("../icons/IconsLight=mail.svg");
+        }
+    
+        li.copyright::before {
+            content: "";
+            background-image: url("../icons/Icons Light=copyright.svg");
+        }
+    }
+
+    .subText {
+        text-align: center;
+        p {
+            display: inline-flex;
+            font-family: $link-font-family;
+            font-size: clamp(0.69rem, 0vw + 0.69rem, 0.69rem);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.5;
+    
+        }
+    } 
+}
+
+@include responsive($medium) {
+    footer {
+        .buttonContainer {
+            margin-bottom: $spacing-regular;
+            .button {
+                margin-bottom: 0;
+            
+        }
+    }
+
+        ul {
+            padding-left: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0;
+
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+

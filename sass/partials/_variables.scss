@@ -1,0 +1,115 @@
+//font-families
+@font-face {
+font-family: 'Karma';
+font-weight: 500;
+src: url('/fonts/karma/Karma-Medium.woff2'),
+    url('/fonts/karma/Karma-Medium.woff'),
+    url('/fonts/karma/Karma-Medium.ttf'),
+    url('/fonts/karma/Karma-Medium.otf');
+}
+
+@font-face {
+font-family: 'Inter';
+font-weight: 600;
+src: url('/fonts/inter/Inter-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: 'Dala Floda Web';
+	src: url('../fonts/dalaFlodaWeb/DalaFloda-RomanNo2-Web.woff2') format('woff2'),
+		 url('../fonts/dalaFlodaWeb/DalaFloda-RomanNo2-Web.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+//standard factors
+$half : 0.5;
+$whole : 1;
+$double : 2;
+
+
+//breakpoints
+$small : 320px;
+$medium : 740px;
+$large : 1280px;
+$xlarge : 1780px;
+
+//spacings
+$spacing-xxl : 190px;
+$spacing-xl : 150px;
+$spacing-large : 115px;
+$spacing-regular : 92px;
+$spacing-small : 45px;
+$spacing-xs : 30px;
+$spacing-xxs : 20px;
+
+//line heights
+$line-height-wetsuit : 1.0em;
+$line-height-tight : 1.2em;
+$line-height-normal : 1.5em;
+$line-height-loose : 1.7em;
+
+//font sizes
+$font-size-xs : 14px;
+$font-size-small : 18px;
+$font-size-smegular : 36px;
+$font-size-regular : 50px;
+$font-size-large : 80px;
+$font-size-xl : 149px;
+
+//colors
+$primary: #232835;
+$peach: #E7BBB1;
+$primary-invert: white;
+$lightBlue: #9AB1E7;
+$lightGreen: #C2E787;
+
+//links
+$link-size: #{fluid(11px, 11px)};
+$link-color: $primary-invert;
+$link-underline: none;
+$link-font-family: 'inter';
+$link-text-transform: uppercase;
+$link-letter-spacing: 1px;
+
+//buttons
+$button-background: transparent;
+$button-border: 0;
+
+//display headings
+$display-heading-font-size: #{fluid($font-size-large, $font-size-xl)};
+$display-heading-font-family: 'Dala Floda Web';
+$display-heading-font-weight: normal;
+$display-heading-font-color: $primary-invert;
+$display-heading-line-height: $line-height-wetsuit;
+
+//large allcaps
+$allcaps-heading-font-size: #{fluid($font-size-small, $font-size-xs)};
+$allcaps-heading-font-family: 'Inter';
+$allcaps-heading-font-weight: normal;
+$allcaps-heading-line-height: $line-height-normal;
+$allcaps-heading-transform: uppercase;
+$allcaps-letter-spacing: 5.25px;
+
+
+//large headings
+$large-heading-font-size: #{fluid($font-size-smegular, $font-size-regular)};
+$large-heading-font-family: 'Dala Floda Web';
+$large-heading-font-weight: normal;
+
+//small headings
+$small-heading-font-size: $font-size-small;
+
+//body text
+$body-text-font-size: #{fluid($font-size-xs, $font-size-small)};
+$body-text-color: $primary-invert;
+$body-font-family: 'Karma';
+
+//container padding and max width etc..
+$container-padding : 0px #{fluid($spacing-xxs, $spacing-small)} 0px #{fluid($spacing-xxs, $spacing-small)};
+
+//container padding specific direction
+$container-left-right-padding : #{fluid($spacing-xxs, $spacing-small)}
+
+
+
+

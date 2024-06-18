@@ -1,0 +1,11 @@
+@import './partials/variables';
+
+h1 {
+    font-family: $display-heading-font-family;
+    font-weight: $display-heading-font-weight;
+    line-height: $display-heading-line-height;
+}
+
+p {
+    font-family: $body-font-family;
+}

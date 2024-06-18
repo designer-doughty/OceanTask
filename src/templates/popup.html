@@ -1,0 +1,24 @@
+<div class="popupContainer">
+    <div class="popup">
+
+        <div class="clear">
+            <span class="up"></span>
+            <span class="across"></span>
+        </div>
+        <div class="content test class">
+            {% if value.projectValues.popupImage == false %}
+            {% else %}
+            <img src="{{value.projectValues.popupImage}}"/>
+            {% endif %}
+            <h1>{{value.projectValues.title}}</h1>
+            <ul>
+                {% for x in value.projectValues.skills %}
+                <li class="skills">
+                {{x}}
+                </li>
+                {% endfor %}      
+            </ul>
+            <p>{{value.projectValues.list_description}}</p>
+        </div>
+    </div>
+</div>

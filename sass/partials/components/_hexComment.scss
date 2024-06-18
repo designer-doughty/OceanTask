@@ -1,0 +1,134 @@
+@import './partials/variables';
+
+.hexComment.desktop {
+    display: none;
+}
+
+.hexComment.mobile {
+    filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.2));
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    height: 103px;
+    position: absolute;
+    .topPoint {
+        width: 0;
+        height: 0;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-top: 30px solid white;
+        transform: rotate(180deg);
+    }
+
+    .bottomPoint {
+        width: 0;
+        height: 0;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-top: 30px solid white;
+    }
+
+    .content {
+        height:auto;
+        background: white;
+        padding: 0;
+        margin: 0;
+        display: block;
+        z-index: unset;
+        * {
+            margin-top: 0;
+            width: inherit;
+            color: $lightBlue;
+            text-align: center;
+        }
+    }
+
+    .content::after {
+        display: none;
+    }
+}
+
+@include responsive($medium) {
+
+        .hexComment.mobile {
+            display: none;
+        }
+
+        .hexComment.desktop {
+            width: 351px;
+            display: flex;
+            flex-direction: column;
+            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.2));
+
+        .image {
+            top: 0px;
+            left: 0px;
+            -webkit-mask-image: url(/images/halfHex.png);
+            width: auto;
+            background-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            width: 100%;
+            height: 317px;
+        }
+        .content {
+            flex-direction: column;
+            background: white;
+            text-align: center;
+            padding: 16px 20px 0 20px;
+
+            h4 {
+                font-family: $allcaps-heading-font-family;
+                font-size: $allcaps-heading-font-size;
+                text-transform: $allcaps-heading-transform;
+                line-height: $allcaps-heading-line-height;
+                letter-spacing: $allcaps-letter-spacing;
+            }
+        }
+
+        .content::after {
+            display: none;
+        }
+
+        .bottomPoint {
+            width: 0;
+            height: 0;
+            border-left: 175px solid transparent;
+            border-right: 175px solid transparent;
+            border-top: 104px solid white;
+        }
+
+        .image {
+            background-color: none;
+            top: 0px;
+            left: 0px;
+            -webkit-mask-image: url(/images/halfHex.png);
+            width: auto;
+            background-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            width: 100%;
+            height: 317px;
+        }
+
+        .content {
+            flex-direction: column;
+            background: white;
+            text-align: center;
+            padding: 16px 20px 0 20px;
+            h4 {
+                font-family: $allcaps-heading-font-family;
+                font-size: $allcaps-heading-font-size;
+                text-transform: $allcaps-heading-transform;
+                line-height: $allcaps-heading-line-height;
+                letter-spacing: $allcaps-letter-spacing;
+                font-weight: 500;
+            }
+        }
+        .bottomPoint {
+            width: 0;
+            height: 0;
+            border-left: 175px solid transparent;
+            border-right: 175px solid transparent;
+            border-top: 104px solid white;
+        }
+    }
+}

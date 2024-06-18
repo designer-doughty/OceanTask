@@ -1,0 +1,244 @@
+<!DOCTYPE html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta name="keywords" lang="en-gb" content="{{page_keywords}}">
+    <meta name="copyright" content="{{page_author}}">
+    <meta name="author" content="{{page_author}}">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Chris Doughty Portfolio</title>
+  </head>
+  <body onscroll="percentageScroll()" data-name="{{page_title}}">
+
+    {% block header %}
+      <nav>
+        <button id="openMenu" onclick="openMenu()">
+          <img alt="icon to open menu" class="open" src="./icons/hamburgerLight.svg"/>
+        </button>
+
+        <div id="overlay">
+          <button id="closeMenu" onclick="closeMenu()">
+          <img alt="icon to close menu" class="close" src="./icons/closeLight.svg"/>
+        </button>
+          <ul>
+            <li>
+              <a href="/index.html">
+                Home
+              </a>
+            </li>
+            {% for i in pages %}
+              <li>
+                <a href="/{{i}}.html">
+                  {{i}}
+                </a>
+              </li>
+            {% endfor %}
+            <li>
+              <a href="#scrollFooter" onClick="closeMenu()">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+
+      <nav style="background-color: {{headerColour}}" class="desktop">
+        <ul>
+          <li>
+              <a href="/index.html">
+                Home
+              </a>
+            </li>
+            {% for i in pages %}
+              <li>
+                <a href="/{{i}}.html">
+                  {{i}}
+                </a>
+              </li>
+            {% endfor %}
+            <li>
+              <a href="#scrollFooter">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+    {% endblock %}
+
+    <div class="container">
+
+      <div class="content background-{{heroColour}}">
+
+        {% block hero %}
+
+        <div class="hero {{heroSize}}">
+          
+          <h1>{{page_title}}</h1>
+
+          {%block description%}{%endblock%}
+
+        </div>
+        {%endblock%}
+      </div>
+
+    {% block pageContent %}
+
+    {% endblock %}
+
+{% block footer %}
+<footer id="scrollFooter">
+    <div class="buttonContainer">
+        <div class="button lightBlue big invert">
+            <a class="buttonLink lightBlue" href="/projects.html">View More</a>
+        </div>
+    
+        <div class="button lightBlue big ">
+            <a class="buttonLink lightBlue" href="mailto:hello@designerdoughty.com">Get In Touch</a>
+        </div>
+    </div>
+    <div class="subFooter">
+                <ul>
+          <a target="blank" href="https://uk.linkedin.com/in/designerdoughty">
+            <li class="linkedin">DesignerDoughty</li>
+          </a>
+          <a href="mailto:hello@designerdoughty.com">
+            <li class="email">hello@designerdoughty.com</li>
+          </a>
+          <a>
+            <li class="copyright">Chris Doughty 2023</li>
+            </a>
+        </ul>
+        <div class="subText">
+            <p>Made by me, not squarespace :) </p>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+    
+    </div>
+
+
+
+
+   
+
+<script>
+  function openMenu() {
+    var trigger = document.getElementById("openMenu");
+    var overlay = document.getElementById("overlay");
+
+    trigger.classList.add("open");
+    overlay.classList.add("open");
+  }
+
+  function closeMenu() {
+    var trigger = document.getElementById("closeMenu");
+    var overlay = document.getElementById("overlay");
+
+    trigger.classList.remove("open");
+    overlay.classList.remove("open");
+  }
+
+  function percentageScroll() {
+    if (document.querySelector('[data-name="Design Process"]')) {
+      let currentPos = document.body.scrollTop;
+      let totalHeight = document.body.scrollHeight;
+
+      let viewportOffset = totalHeight - window.innerHeight;
+
+      let difference = viewportOffset - currentPos;
+      let division = difference / viewportOffset;
+
+      let currentPer = 1 - division;
+
+      if( currentPer < 0.20 ) {
+          document.querySelectorAll('.hexShape')[0].classList.add('active');
+          document.querySelectorAll('.hexShape')[1].classList.remove('active');
+          document.querySelectorAll('.hexShape')[2].classList.remove('active');
+          
+      } else if(currentPer > 0.21 && currentPer < 0.29) {
+          document.querySelectorAll('.hexShape')[0].classList.remove('active');
+          document.querySelectorAll('.hexShape')[1].classList.add('active');
+          document.querySelectorAll('.hexShape')[2].classList.remove('active');
+          
+      } else if(currentPer > 0.29 && currentPer < 0.35) {
+          document.querySelectorAll('.hexShape')[0].classList.remove('active');
+          document.querySelectorAll('.hexShape')[1].classList.remove('active');
+          document.querySelectorAll('.hexShape')[2].classList.add('active');
+      } else if(currentPer > 0.70 && currentPer < 0.75) {
+          document.querySelectorAll('.imageWrapper')[0].classList.add('active');
+          document.querySelectorAll('.imageWrapper')[1].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[2].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[3].classList.remove('active');
+
+      }  else if(currentPer > 0.80 && currentPer < 0.85) {
+          document.querySelectorAll('.imageWrapper')[0].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[1].classList.add('active');
+          document.querySelectorAll('.imageWrapper')[2].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[3].classList.remove('active');
+
+      } else if(currentPer > 0.81 && currentPer < 0.91) {
+          document.querySelectorAll('.imageWrapper')[0].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[1].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[2].classList.add('active');
+          document.querySelectorAll('.imageWrapper')[3].classList.remove('active');
+
+      } else if(currentPer > 0.95 && currentPer < 0.99) {
+          document.querySelectorAll('.imageWrapper')[0].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[1].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[2].classList.remove('active');
+          document.querySelectorAll('.imageWrapper')[3].classList.add('active');
+      } 
+  }
+}
+  
+
+if (document.querySelector('[data-name="Design Process"]')) {
+
+  let size = window.innerWidth;
+
+  if(size > 1280) {
+  
+      onmousemove = function(e) {
+        
+          const mouseX = e.clientX;
+          const diffX = window.innerWidth - mouseX;
+          const xPercentage = diffX / window.innerWidth * 100;
+              
+          const mouseY = e.clientY;
+          const diffY = window.innerWidth - mouseY;
+          const yPercentage = diffY / window.innerWidth * 100;
+
+          const boundary = document.getElementById('outer').getBoundingClientRect();
+          
+          const inner = document.getElementById('inner');
+
+          yMin = -30;
+          yMax = 30;
+
+          xMin = -35;
+          xMax = 35;
+
+          const ySinglePercent = 0.6;
+          const xSinglePercent = 0.7;
+
+          const yOffset = ySinglePercent * yPercentage;
+          const xOffset = xSinglePercent * xPercentage;
+
+          inner.setAttribute('style', 'top: '+ yOffset +'; left: '+ xOffset +'')
+      }
+    }
+}
+
+
+  
+</script>    
+
+  </body>
+</html>
+
+

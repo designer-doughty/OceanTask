@@ -1,0 +1,14 @@
+{% extends "content-layout.njk" %}
+
+{% set page_keywords = "Portfolio, Design, Development, eCommerce, ArtTech, UI, UX" %}
+{% set page_description = "Portfolio Home Page" %}
+{% set page_title = "Popup Test" %}
+{% set heroSize = "small" %}
+{% set heroColour = "lightBlue" %}
+
+{% block pageContent %}
+    {% set ProjectType = ArtTech %}
+    {% set ProjectName = CharlesMoffett %}
+    {% set c = ArtTech.CharlesMoffett.projectValues.title %}
+    {% include "popup.html" %}
+{% endblock %}

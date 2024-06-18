@@ -1,0 +1,20 @@
+img.divider {
+    padding-left: 0;
+    width: calc(100vw + 3px);
+    transform: translate(calc(#{fluid($spacing-xxs, $spacing-small)} * -1 - 3px), -1px);
+    display: block;
+    
+    @include responsive($medium) {
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-top: 0;
+            margin-bottom: 20px;
+            z-index: 0;
+            transform: translate(-1px, -1px);
+            max-width: calc(100vw + 1px);
+    }
+}
+

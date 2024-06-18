@@ -1,0 +1,227 @@
+@import './partials/variables';
+
+
+$negative-margin : -10%;
+
+body[data-name="Project Library"] {
+
+
+    .content.nonHero {
+
+        $hex-spacing : 2%;
+
+        flex-direction: column;
+
+        .itemsGrid {
+            display: flex;
+            flex-wrap: wrap;
+            
+            h2 {
+                text-align: center;
+                width: 100%;
+                font-size: #{fluid($font-size-smegular, $font-size-regular)};
+                font-family: $display-heading-font-family;
+                font-weight: normal;
+                color: $display-heading-font-color;
+                line-height: $display-heading-line-height;
+                margin-bottom: $spacing-small;
+            }
+
+            h2.dark {
+                font-size: #{fluid($font-size-regular, $font-size-large)};
+            }
+
+            .gridItem {
+                width: 50%;
+                box-sizing: border-box;
+                img {
+                    width: 100%;
+                    filter: brightness(0.5);
+                }
+
+                a {
+                    position: relative;
+                    display: block;
+                    .itemContent {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        display: block;
+                        h2 {
+                            margin: 0;
+                        }
+                    }
+                }   
+            }
+
+            .gridItem:nth-of-type(1),
+            .gridItem:nth-of-type(4),
+            .gridItem:nth-of-type(7) {
+                padding-right: $hex-spacing;
+            }
+
+            .gridItem:nth-of-type(2),
+            .gridItem:nth-of-type(5),
+            .gridItem:nth-of-type(8) {
+                padding-left: $hex-spacing;
+            }
+            
+            .gridItem:nth-of-type(3n) {
+                width: 100%;
+                padding: 0;
+                a {
+                    width: 50%;
+                    margin: auto;
+                    margin-top: $negative-margin
+                }
+            }
+
+                        
+            .gridItem:nth-of-type(4),
+            .gridItem:nth-of-type(5) {
+                a {
+                    margin-top: calc($negative-margin * 2);
+                }
+            }
+
+            .gridItem:nth-of-type(7),
+            .gridItem:nth-of-type(8) {
+                a {
+                    margin-top: calc($negative-margin * 2);
+                }
+            }
+
+
+        }
+    }
+
+    .content.background-lightGreen {
+        h2.dark {
+            color: $primary;
+        }
+    }
+
+    @include responsive($medium) {
+
+        .content.nonHero .itemsGrid {
+            $hex-spacing : 1%;
+            $negative-margin : -5%;
+
+            justify-content: center;
+
+            .gridItem {
+                padding-right: $hex-spacing;
+                padding-left: $hex-spacing;
+
+                a {
+                    cursor: pointer;
+                }
+            }
+
+            .gridItem,
+            .gridItem:nth-of-type(3n) {
+                width: 33%;
+                padding-left: $hex-spacing;
+                padding-right: $hex-spacing;
+
+                a {
+                    width: 100%;
+                    margin-top: 0;
+                }
+            }
+
+            .gridItem:nth-of-type(1),
+            .gridItem:nth-of-type(4),
+            .gridItem:nth-of-type(7) {
+                a {
+                    margin-top: 0;
+                }
+            }
+
+            .gridItem:nth-of-type(2),
+            .gridItem:nth-of-type(5),
+            .gridItem:nth-of-type(8) {
+                a {
+                    margin-top: 0;
+                }
+            }
+
+            
+            .gridItem:nth-of-type(4),
+            .gridItem:nth-of-type(5) {
+                margin-top: $negative-margin;
+            }
+
+            .gridItem:last-of-type {
+                width: 100%;
+                margin-top: $negative-margin;
+                a {
+                    width: 33%;
+                }
+            }
+        }
+
+        .content.nonHero .itemsGrid.artTech {
+
+            $hex-spacing : 0;
+
+            .gridItem:nth-of-type(4),
+            .gridItem:nth-of-type(5) {
+                width: 50%;
+                a {
+                    width: 65%;
+                }
+            }
+
+            .gridItem:nth-of-type(1),
+            .gridItem:nth-of-type(2) {
+                padding-right: 2%;
+            }
+
+            .gridItem:nth-of-type(4) {
+                padding-right: 1%;
+            }
+
+            .gridItem:nth-of-type(5) {
+                padding-left: 1%;
+            }
+
+            .gridItem:nth-of-type(3) {
+                padding-left: 2%;
+            }
+
+
+            .gridItem:nth-of-type(4) {
+                a {
+                    margin-left: auto;
+                }
+            }
+
+            div.gridItem:nth-of-type(5) {
+                a {
+                    margin-right: auto;
+                }
+            }
+
+            .gridItem:nth-of-type(6),
+            .gridItem:nth-of-type(7) {
+                width: 33%;
+                margin-top: calc($negative-margin / 2);
+                a {
+                 width: 100%;   
+                }
+            }
+
+
+            .gridItem:last-of-type {
+                width: 33%;
+                margin-top: calc($negative-margin / 2);
+                a {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+

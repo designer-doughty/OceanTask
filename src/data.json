@@ -1,0 +1,147 @@
+{
+    "pages": ["index", "list"],
+    "page_author" : "Chris Doughty",
+    "social_media" : {
+        "facebook" : {
+            "darkIconURL" : "",
+            "lightIconURL" : ""
+        },
+        "instagram" : {
+            "darkIconURL" : "",
+            "lightIconURL" : ""
+        }
+    },
+    "configurations" : {
+        "Tyres" : {
+            "001" : {
+                "size" : "16inch",
+                "tread" : "winter",
+                "images" : {
+                    "list_image" : ""
+                }
+            },
+            "002" : {
+                "size" : "16inch",
+                "tread" : "summer",
+                "images" : {
+                    "list_image" : ""
+                }
+            },
+            "003" : {
+                "size" : "17inch",
+                "tread" : "winter",
+                "images" : {
+                    "list_image" : ""
+                }
+            },
+            "004" : {
+                "size" : "17inch",
+                "tread" : "summer",
+                "images" : {
+                    "list_image" : ""
+                }
+            },
+            "005" : {
+                "size" : "18inch",
+                "tread" : "winter",
+                "images" : {
+                    "list_image" : ""
+                }
+            },
+            "006" : {
+                "size" : "18inch",
+                "tread" : "summer",
+                "images" : {
+                    "list_image" : ""
+                }
+            }
+        },
+        "Colours" : {
+            "001" : {
+                "name" : "Metallic Ocean Green",
+                "images" : {
+                    "list_image" : ""
+                }
+            },
+            "002" : {
+                "name" : "Black",
+                "images" : {
+                    "list_image" : ""
+                }
+            },
+            "003" : {
+                "name" : "Metallic Sand",
+                "images" : {
+                    "list_image" : ""
+                }
+            },
+            "004" : {
+                "name" : "Metallic Sky Blue",
+                "images" : {
+                    "list_image" : ""
+                }
+            },
+            "005" : {
+                "name" : "Metallic Sunset Orange",
+                "images" : {
+                    "list_image" : ""
+                }
+            },
+            "006" : {
+                "name" : "Red",
+                "images" : {
+                    "list_image" : ""
+                }
+            }
+        },
+        "Headlights" : {
+
+        },
+        "Window Tint" : {
+
+        },
+        "Viewing Angles" : {
+            "Front" : {
+                "xRotate" : 0,
+                "yRotate" : 0,
+                "zRotate" : 0,
+                "zoom" : 0,
+                "iconURL" : ""
+            },
+            "Side" : {
+                "xRotate" : 0,
+                "yRotate" : 0,
+                "zRotate" : 0,
+                "zoom" : 0,
+                "iconURL" : ""
+            },
+            "Top Down" : {
+                "xRotate" : 0,
+                "yRotate" : 0,
+                "zRotate" : 0,
+                "zoom" : 0,
+                "iconURL" : ""
+            },
+            "Isometric" : {
+                "xRotate" : 0,
+                "yRotate" : 0,
+                "zRotate" : 0,
+                "zoom" : 0,
+                "iconURL" : ""
+            },
+            "Back" : {
+                "xRotate" : 0,
+                "yRotate" : 0,
+                "zRotate" : 0,
+                "zoom" : 0,
+                "iconURL" : ""
+            },
+            "AutoRotate" : {
+                "startingAngle" : 0,
+                "endAngle" : 0,
+                "duration" : 0,
+                "iconUrl" : ""
+            }
+        }
+    }
+}
