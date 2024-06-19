@@ -24,15 +24,18 @@
 
     <script>
 
+      //The various click event listeners for adding active states
       document.getElementById('tyres').addEventListener('click', showTyreGrid);
       document.getElementById('colours').addEventListener('click', showColourGrid);
       document.getElementById('preview').addEventListener('click', showPopup);
       document.getElementById('close').addEventListener('click', hidePopup);
       
+
       const tilesTyre = document.querySelectorAll('div.tileTyre');
       const tilesColour = document.querySelectorAll('div.tileColour');
       const viewingAngles = document.querySelectorAll('a.angleButton');
 
+      //A placeholder object, which is popuplated with the relevant options as you click through
       const data = {
         "colour" : "",
         "tyres" : "",
@@ -45,68 +48,77 @@
           }
         }
 
+      //Establish the connection to the websocked on port 8080
        const ws = new WebSocket("ws://localhost:8080");
 
         ws.addEventListener("open", () => {
-            console.log("we are connected");
-
-            
+            console.log("we are connected");            
         });
 
-
+      //Loop through all tiles in the tyre grid ready for an active state to be applied on click
       tilesTyre.forEach(function(elem) {
 
         elem.addEventListener('click', function(){
 
           for (let a = 0; a < tilesTyre.length; a++) {
+            //clear any pre existing active states on the tyre tiles
             tilesTyre[a].classList.remove('active');
           }
 
+          //add active state so the border shows
           this.classList.add('active');
-
+          //grab the title of the selected tile
           let title = this.innerText;
+          //add that to the placeholder object established earlier
           data.tyres = title;
-
+          //send updated object to the websocket server
           ws.send(JSON.stringify(data));
         })
       })
 
+      //Loop through all tiles in the colour grid ready for an active state to be applied on click
       tilesColour.forEach(function(elem) {
 
         elem.addEventListener('click', function(){
 
           for (let a = 0; a < tilesColour.length; a++) {
+            //clear any pre existing active states on the tyre tiles
             tilesColour[a].classList.remove('active');
           }
 
+          //add active state so the border shows
           this.classList.add('active');
-
+          //grab the title of the selected tile
           let colour = this.innerText;
+          //store that in the data object
           data.colour = colour;
-
+          //send to the websocket server
           ws.send(JSON.stringify(data));
 
         })
       })
 
+      //Loop through all tiles in the viewing angle buttons ready for an active state to be applied on click
       viewingAngles.forEach(function(elem){
 
         elem.addEventListener('click', function(){
             
           for (let a = 0; a < viewingAngles.length; a++) {
+            //remove all active states first
             viewingAngles[a].classList.remove('active');
             viewingAngles[a].classList.remove('solidWhite');
           }
-
+          //add classes that show the button as active
           this.classList.add('active');
           this.classList.add('solidWhite');
 
+          //grab various pieces of data ready to be sent over the websocket
           let title = this.innerText;
           let xCord = this.getAttribute('data-xcord');
           let yCord = this.getAttribute('data-ycord');
           let zCord = this.getAttribute('data-zcord');
           let zoom = this.getAttribute('data-zoom');
-
+          //construct the object
           data.viewingAngles = {
             "title" : title,
             "x" : xCord,
@@ -114,17 +126,18 @@
             "z" : zCord,
             "zoom" : zoom
           }
-
+          //send the constructed object to the wss
           ws.send(JSON.stringify(data));
           
         })
       })
 
-      function showTyreGrid() {
+      function showTyreGrid() { //hide colour grid and show tyre grid on click
 
         let allSelectors = document.getElementsByClassName('gridSelector');
       
         for (let a = 0; a < allSelectors.length; a++) {
+          //clear active states before applying to the recently clicked one
             allSelectors[a].classList.remove('active');
             allSelectors[a].classList.remove('solidWhite');
             allSelectors[a].classList.add('bordered');
