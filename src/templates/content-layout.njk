@@ -24,7 +24,52 @@
 
     <script>
 
+      document.getElementById('tyres').addEventListener('click', showTyreGrid);
+      document.getElementById('colours').addEventListener('click', showColourGrid);
 
+      function showTyreGrid() {
+
+        let allSelectors = document.getElementsByClassName('gridSelector');
+      
+        for (let a = 0; a < allSelectors.length; a++) {
+            allSelectors[a].classList.remove('active');
+            allSelectors[a].classList.remove('solidWhite');
+            allSelectors[a].classList.add('bordered');
+        }
+
+        let allGrids = document.getElementsByClassName('itemGrid');
+
+        for (let a = 0; a < allGrids.length; a++) {
+          allGrids[a].classList.remove('active');
+        }
+
+        this.classList.add('active');
+        this.classList.add('solidWhite');
+
+        document.getElementById('tyreGrid').classList.add('active');
+      }
+
+    function showColourGrid() {
+        
+        let allSelectors = document.getElementsByClassName('gridSelector');
+      
+        for (let a = 0; a < allSelectors.length; a++) {
+            allSelectors[a].classList.remove('active');
+            allSelectors[a].classList.remove('solidWhite');
+            allSelectors[a].classList.add('bordered');
+        }
+
+        let allGrids = document.getElementsByClassName('itemGrid');
+
+        for (let a = 0; a < allGrids.length; a++) {
+          allGrids[a].classList.remove('active');
+        }
+
+        this.classList.add('active');
+        this.classList.add('solidWhite');
+
+        document.getElementById('colourGrid').classList.add('active');
+    }
   
     </script>    
 

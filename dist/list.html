@@ -23,13 +23,13 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet nisi at elit venenatis fringilla. Cras ut semper quam, sit.</p>    
         </div>
         <div class="items">
-            <a class="listItem solidWhite" id="tyres" href="#">Tyres</a>
-            <a class="listItem bordered light" id="colours" href="#">Colours</a>
-            <a class="listItem bordered light" id="headlights" href="#">Headlights</a>
-            <a class="listItem bordered light" id="window" href="#">Window</a>
+            <a class="listItem gridSelector solidWhite light" id="tyres" href="#">Tyres</a>
+            <a class="listItem gridSelector bordered light" id="colours" href="#">Colours</a>
+            <a class="listItem gridSelector bordered light" id="headlights" href="#">Headlights</a>
+            <a class="listItem gridSelector bordered light" id="window" href="#">Window</a>
         </div>
 
-        <div class="itemGrid active tyres">
+        <div id="tyreGrid" class="itemGrid active tyres">
 
             <div class="radioToggle">                  
                 <label class="switch">
@@ -81,7 +81,7 @@
             </div>
         </div>
 
-        <div class="itemGrid active colours">
+        <div id="colourGrid" class="itemGrid hidden colours">
 
             <div class="radioToggle">                  
                 <label class="switch">
@@ -133,7 +133,7 @@
             </div>
         </div>
 
-        <div class="popup active">
+        <div class="popup hidden">
             <div class="overlay">
                 <div class="popupContent">
                     <h2>Update Viewing Angle</h2>
@@ -166,7 +166,52 @@
 
     <script>
 
+      document.getElementById('tyres').addEventListener('click', showTyreGrid);
+      document.getElementById('colours').addEventListener('click', showColourGrid);
 
+      function showTyreGrid() {
+
+        let allSelectors = document.getElementsByClassName('gridSelector');
+      
+        for (let a = 0; a < allSelectors.length; a++) {
+            allSelectors[a].classList.remove('active');
+            allSelectors[a].classList.remove('solidWhite');
+            allSelectors[a].classList.add('bordered');
+        }
+
+        let allGrids = document.getElementsByClassName('itemGrid');
+
+        for (let a = 0; a < allGrids.length; a++) {
+          allGrids[a].classList.remove('active');
+        }
+
+        this.classList.add('active');
+        this.classList.add('solidWhite');
+
+        document.getElementById('tyreGrid').classList.add('active');
+      }
+
+    function showColourGrid() {
+        
+        let allSelectors = document.getElementsByClassName('gridSelector');
+      
+        for (let a = 0; a < allSelectors.length; a++) {
+            allSelectors[a].classList.remove('active');
+            allSelectors[a].classList.remove('solidWhite');
+            allSelectors[a].classList.add('bordered');
+        }
+
+        let allGrids = document.getElementsByClassName('itemGrid');
+
+        for (let a = 0; a < allGrids.length; a++) {
+          allGrids[a].classList.remove('active');
+        }
+
+        this.classList.add('active');
+        this.classList.add('solidWhite');
+
+        document.getElementById('colourGrid').classList.add('active');
+    }
   
     </script>    
 

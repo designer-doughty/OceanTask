@@ -7,6 +7,7 @@
     h1 {
         margin-top: 50px;
         color: white;
+        font-size: 42px;
     }
 
     p {
@@ -37,12 +38,11 @@
         }
     }
 
-    .itemGrid.tyres,
-    .itemGrid.colours {
+    .itemGrid {
         display: none;
     }
 
-    .itemGrid {
+    .itemGrid.active {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -120,7 +120,7 @@
     }
 
     .popup.active .overlay {
-        background-color: rgba(255,255,255,0.85);
+        background-color: rgba(255,255,255,0.5);
         position: fixed;
         height: 100vh;
         width: 100%;
@@ -141,25 +141,91 @@
         display: flex;
         flex-direction: column;
         padding: 0 30px;
-        padding-right: 0;
+        padding-right: 15px;
+        position: relative;
+        
+        h2 {
+            font-size: 36px;
+            padding-right: 30px;
+            line-height: 1em;
+        }
 
         .items {
             overflow-x: initial;
             height: auto;
             width: auto;
+            margin-top: 26px;
         }
 
         .items a {
             color: white;
             margin-bottom: 10px;
             margin-left: 0;
+            min-width: auto;
+            padding-left: 35px;
+            padding-right: 25px;
+            position: relative;
+
+
+        }
+
+        .items a:after {
+            content: "";
+            height: 10px;
+            width: 10px;
+            position: absolute;
+            z-index: 999999999;
+            top: 10px;
+            left: 15px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        #front::after {
+            background-image: url(/icons/front_light.svg);
+        }
+
+        #side::after {
+            background-image: url(/icons/side_light.svg);
+            height: 20px;
+            width: 13px;
+        }
+
+        #TopDown::after {
+            background-image: url(/icons/topDown_light.svg);
+        }
+
+        #isometric::after {
+            background-image: url(/icons/isometric_light.svg);
+        }
+
+        #back::after {
+            background-image: url(/icons/back_light.svg);
+        }
+
+        #autoRotate::after {
+            background-image: url(/icons/autoRotate_light.svg);
         }
 
         .items a.bordered {
             max-height: 35px;
-            padding: 0;
+            padding-top: 0;
+            padding-bottom: 0;
         }
 
+    }
+
+    .popupContent::after {
+        content: "";
+        height: 10px;
+        width: 10px;
+        position: absolute;
+        z-index: 999999999;
+        top: 15px;
+        right: 15px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('/icons/close_light.svg');
     }
 }
 
@@ -181,7 +247,7 @@
 .previewbutton {
     position: sticky;
     bottom: 23px;
-    z-index: -1;
+    z-index: 0;
 }
 
 .previewbutton ul li a.fullwidth::before {

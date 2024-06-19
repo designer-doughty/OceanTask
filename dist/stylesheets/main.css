@@ -229,6 +229,7 @@ body.background_grey {
 .content.listPage h1 {
   margin-top: 50px;
   color: white;
+  font-size: 42px;
 }
 .content.listPage p {
   color: white;
@@ -253,17 +254,16 @@ body.background_grey {
 .content.listPage .items a:first-child {
   margin-left: 0;
 }
-.content.listPage .itemGrid.tyres,
-.content.listPage .itemGrid.colours {
+.content.listPage .itemGrid {
   display: none;
 }
-.content.listPage .itemGrid {
+.content.listPage .itemGrid.active {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 20px;
 }
-.content.listPage .itemGrid .item {
+.content.listPage .itemGrid.active .item {
   width: 45%;
   display: inline-flex;
   padding: 20px;
@@ -271,22 +271,22 @@ body.background_grey {
   flex-direction: column;
   position: relative;
 }
-.content.listPage .itemGrid .item a {
+.content.listPage .itemGrid.active .item a {
   color: white;
   padding: 10px;
 }
-.content.listPage .itemGrid .item img {
+.content.listPage .itemGrid.active .item img {
   width: 100%;
 }
-.content.listPage .itemGrid .item h3 {
+.content.listPage .itemGrid.active .item h3 {
   line-height: 1em;
   text-align: center;
 }
-.content.listPage .itemGrid .item.active {
+.content.listPage .itemGrid.active .item.active {
   box-shadow: 0 14px 34px 20px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
 }
-.content.listPage .itemGrid .item.active::after {
+.content.listPage .itemGrid.active .item.active::after {
   content: "";
   height: 20px;
   width: 20px;
@@ -298,11 +298,11 @@ body.background_grey {
   right: 0px;
   z-index: 5;
 }
-.content.listPage .itemGrid .item:nth-child(odd) {
+.content.listPage .itemGrid.active .item:nth-child(odd) {
   padding-left: 0;
   padding-right: 0px;
 }
-.content.listPage .itemGrid .item:nth-child(even) {
+.content.listPage .itemGrid.active .item:nth-child(even) {
   padding-right: 0;
   padding-left: 0px;
 }
@@ -323,7 +323,7 @@ body.background_grey {
   min-height: 289px;
 }
 .content.listPage .popup.active .overlay {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.5);
   position: fixed;
   height: 100vh;
   width: 100%;
@@ -343,21 +343,76 @@ body.background_grey {
   display: flex;
   flex-direction: column;
   padding: 0 30px;
-  padding-right: 0;
+  padding-right: 15px;
+  position: relative;
+}
+.content.listPage .popup.active .popupContent h2 {
+  font-size: 36px;
+  padding-right: 30px;
+  line-height: 1em;
 }
 .content.listPage .popup.active .popupContent .items {
   overflow-x: initial;
   height: auto;
   width: auto;
+  margin-top: 26px;
 }
 .content.listPage .popup.active .popupContent .items a {
   color: white;
   margin-bottom: 10px;
   margin-left: 0;
+  min-width: auto;
+  padding-left: 35px;
+  padding-right: 25px;
+  position: relative;
+}
+.content.listPage .popup.active .popupContent .items a:after {
+  content: "";
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  z-index: 999999999;
+  top: 10px;
+  left: 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.content.listPage .popup.active .popupContent #front::after {
+  background-image: url(/icons/front_light.svg);
+}
+.content.listPage .popup.active .popupContent #side::after {
+  background-image: url(/icons/side_light.svg);
+  height: 20px;
+  width: 13px;
+}
+.content.listPage .popup.active .popupContent #TopDown::after {
+  background-image: url(/icons/topDown_light.svg);
+}
+.content.listPage .popup.active .popupContent #isometric::after {
+  background-image: url(/icons/isometric_light.svg);
+}
+.content.listPage .popup.active .popupContent #back::after {
+  background-image: url(/icons/back_light.svg);
+}
+.content.listPage .popup.active .popupContent #autoRotate::after {
+  background-image: url(/icons/autoRotate_light.svg);
 }
 .content.listPage .popup.active .popupContent .items a.bordered {
   max-height: 35px;
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.content.listPage .popupContent::after {
+  content: "";
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  z-index: 999999999;
+  top: 15px;
+  right: 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/icons/close_light.svg");
 }
 
 .previewbutton ul li a.fullwidth {
@@ -378,7 +433,7 @@ body.background_grey {
 .previewbutton {
   position: sticky;
   bottom: 23px;
-  z-index: -1;
+  z-index: 0;
 }
 
 .previewbutton ul li a.fullwidth::before {
