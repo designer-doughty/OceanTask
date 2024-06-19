@@ -62,7 +62,6 @@
                 width: 100%;
             }
             h3 {
-                line-height: 1em;
                 text-align: center;
             }
         }
@@ -143,6 +142,8 @@
         padding: 0 30px;
         padding-right: 15px;
         position: relative;
+        max-width: 767px;
+        margin: auto;
         
         h2 {
             font-size: 36px;
@@ -179,7 +180,7 @@
             width: 10px;
             position: absolute;
             z-index: 999999999;
-            top: 10px;
+            top: 12px;
             left: 15px;
             background-size: contain;
             background-repeat: no-repeat;
@@ -237,8 +238,15 @@
 
         .items a.bordered {
             max-height: 35px;
-            padding-top: 0;
-            padding-bottom: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .items a.angleButton {
+            font-family: 'Inter-Web';
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
         }
 
     }
@@ -276,6 +284,7 @@
     bottom: 23px;
     z-index: 0;
     display: block;
+    width: 100%;
 }
 
 .previewbutton.active {
@@ -283,15 +292,15 @@
 }
 
 .previewbutton ul li a.fullwidth::before {
-    content: '';
-    height: 20px;
-    width: 20px;
-    background-image: url("/icons/eye.svg");
+    content: "";
+    height: 10px;
+    width: 15px;
+    background-image: url(/icons/eye.svg);
     background-repeat: no-repeat;
     position: absolute;
     background-size: contain;
-    top: 13px;
-    left: 14px;
+    top: 15px;
+    left: 15px;
     z-index: 5;
 }
 
@@ -304,7 +313,10 @@
 
 .radioToggle::before {
     content: 'Light';
-    font-family: 'Koulen';
+    font-family: 'Inter-Web';
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
     color: white;
     -webkit-font-smoothing: antialiased;
     margin-right: 10px;
@@ -312,7 +324,10 @@
 
 .radioToggle::after {
     content: 'Dark';
-    font-family: 'Koulen';
+    font-family: 'Inter-Web';
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
     color: white;
     -webkit-font-smoothing: antialiased;
     margin-left: 10px;

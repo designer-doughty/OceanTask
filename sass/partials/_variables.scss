@@ -16,6 +16,15 @@ src: url('/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff2'),
     url('/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.otf')
 }
 
+@font-face {
+    font-family: 'Inter-Web';
+    font-weight: 900;
+    src: url('/fonts/Inter/Inter-Black.ttf'),
+        url('/fonts/Inter/Inter-Black.woff2'),
+        url('/fonts/Inter/Inter-Black.woff'),
+        url('/fonts/Inter/Inter-Black.otf')
+    }
+
 //standard factors
 $half : 0.5;
 $whole : 1;

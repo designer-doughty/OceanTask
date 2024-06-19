@@ -6,8 +6,17 @@ h1 {
     line-height: $display-heading-line-height;
 }
 
+h3 {
+    font-family: "Inter-Web";
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2em;
+}
+
 p {
     font-family: $body-font-family;
+    -webkit-font-smoothing: antialiased;
 }
 
 a {

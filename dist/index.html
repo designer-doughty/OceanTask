@@ -49,29 +49,24 @@
       const viewingAngles = document.querySelectorAll('a.angleButton');
 
       const data = {
-        "colour" : "placeholder",
-        "tyres" : "placeholder",
+        "colour" : "",
+        "tyres" : "",
         "viewingAngles" : {
-          "presetName" : {
-            "x" : 0,
-            "y" : 0,
-            "z" : 0,
-            "zoom" : 0
+          "title" : "",
+          "xCord" : "",
+          "yCord" : "",
+          "zCord" : "",
+          "zoom" : ""
           }
         }
-      }
 
        const ws = new WebSocket("ws://localhost:8080");
 
         ws.addEventListener("open", () => {
             console.log("we are connected");
 
-            ws.send(JSON.stringify(data));
+            
         });
-
-        ws.addEventListener("message", e => {
-            console.log(e.data);
-        })
 
 
       tilesTyre.forEach(function(elem) {
@@ -83,6 +78,11 @@
           }
 
           this.classList.add('active');
+
+          let title = this.innerText;
+          data.tyres = title;
+
+          ws.send(JSON.stringify(data));
         })
       })
 
@@ -95,6 +95,12 @@
           }
 
           this.classList.add('active');
+
+          let colour = this.innerText;
+          data.colour = colour;
+
+          ws.send(JSON.stringify(data));
+
         })
       })
 
@@ -109,6 +115,23 @@
 
           this.classList.add('active');
           this.classList.add('solidWhite');
+
+          let title = this.innerText;
+          let xCord = this.getAttribute('data-xcord');
+          let yCord = this.getAttribute('data-ycord');
+          let zCord = this.getAttribute('data-zcord');
+          let zoom = this.getAttribute('data-zoom');
+
+          data.viewingAngles = {
+            "title" : title,
+            "x" : xCord,
+            "y" : yCord,
+            "z" : zCord,
+            "zoom" : zoom
+          }
+
+          ws.send(JSON.stringify(data));
+          
         })
       })
 

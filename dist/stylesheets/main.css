@@ -7,6 +7,11 @@
   font-family: "AvenirNext";
   src: url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff2"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.ttf"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.otf");
 }
+@font-face {
+  font-family: "Inter-Web";
+  font-weight: 900;
+  src: url("/fonts/Inter/Inter-Black.ttf"), url("/fonts/Inter/Inter-Black.woff2"), url("/fonts/Inter/Inter-Black.woff"), url("/fonts/Inter/Inter-Black.otf");
+}
 h1,
 h2,
 h3,
@@ -29,6 +34,11 @@ h6 {
   src: url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff2"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.ttf"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.otf");
 }
 @font-face {
+  font-family: "Inter-Web";
+  font-weight: 900;
+  src: url("/fonts/Inter/Inter-Black.ttf"), url("/fonts/Inter/Inter-Black.woff2"), url("/fonts/Inter/Inter-Black.woff"), url("/fonts/Inter/Inter-Black.otf");
+}
+@font-face {
   font-family: "Koulen";
   font-weight: 500;
   src: url("/fonts/Koulen/Koulen-Regular.woff2"), url("/fonts/Koulen/Koulen-Regular.woff"), url("/fonts/Koulen/Koulen-Regular.ttf"), url("/fonts/Koulen/Koulen-Regular.otf");
@@ -37,14 +47,28 @@ h6 {
   font-family: "AvenirNext";
   src: url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff2"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.ttf"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.otf");
 }
+@font-face {
+  font-family: "Inter-Web";
+  font-weight: 900;
+  src: url("/fonts/Inter/Inter-Black.ttf"), url("/fonts/Inter/Inter-Black.woff2"), url("/fonts/Inter/Inter-Black.woff"), url("/fonts/Inter/Inter-Black.otf");
+}
 h1 {
   font-family: "Koulen";
   font-weight: normal;
   line-height: 1em;
 }
 
+h3 {
+  font-family: "Inter-Web";
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+}
+
 p {
   font-family: "AvenirNext";
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -107,7 +131,12 @@ body.background_grey {
   font-family: "AvenirNext";
   src: url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff2"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.ttf"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.otf");
 }
-.container {
+@font-face {
+  font-family: "Inter-Web";
+  font-weight: 900;
+  src: url("/fonts/Inter/Inter-Black.ttf"), url("/fonts/Inter/Inter-Black.woff2"), url("/fonts/Inter/Inter-Black.woff"), url("/fonts/Inter/Inter-Black.otf");
+}
+body .container {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -120,9 +149,10 @@ body.background_grey {
   padding: 0 20px;
   box-sizing: border-box;
   overflow-x: hidden;
+  align-items: center;
 }
-.container .content {
-  max-width: 100vw;
+body .container .content {
+  max-width: 767px;
   margin-left: auto;
   margin-right: auto;
   display: initial;
@@ -156,7 +186,13 @@ body.background_grey {
   font-family: "AvenirNext";
   src: url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff2"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.ttf"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.otf");
 }
+@font-face {
+  font-family: "Inter-Web";
+  font-weight: 900;
+  src: url("/fonts/Inter/Inter-Black.ttf"), url("/fonts/Inter/Inter-Black.woff2"), url("/fonts/Inter/Inter-Black.woff"), url("/fonts/Inter/Inter-Black.otf");
+}
 .content.indexPage {
+  width: 100%;
   margin: unset;
 }
 .content.indexPage .backgroundImage {
@@ -221,6 +257,11 @@ body.background_grey {
   font-family: "AvenirNext";
   src: url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff2"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.woff"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.ttf"), url("/fonts/AvenirNextCondensed/AvenirNextCondensed-Regular.otf");
 }
+@font-face {
+  font-family: "Inter-Web";
+  font-weight: 900;
+  src: url("/fonts/Inter/Inter-Black.ttf"), url("/fonts/Inter/Inter-Black.woff2"), url("/fonts/Inter/Inter-Black.woff"), url("/fonts/Inter/Inter-Black.otf");
+}
 .content.listPage {
   position: relative;
   height: fit-content;
@@ -279,7 +320,6 @@ body.background_grey {
   width: 100%;
 }
 .content.listPage .itemGrid.active .item h3 {
-  line-height: 1em;
   text-align: center;
 }
 .content.listPage .itemGrid.active .item.active {
@@ -345,6 +385,8 @@ body.background_grey {
   padding: 0 30px;
   padding-right: 15px;
   position: relative;
+  max-width: 767px;
+  margin: auto;
 }
 .content.listPage .popup.active .popupContent h2 {
   font-size: 36px;
@@ -377,7 +419,7 @@ body.background_grey {
   width: 10px;
   position: absolute;
   z-index: 999999999;
-  top: 10px;
+  top: 12px;
   left: 15px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -422,8 +464,14 @@ body.background_grey {
 }
 .content.listPage .popup.active .popupContent .items a.bordered {
   max-height: 35px;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.content.listPage .popup.active .popupContent .items a.angleButton {
+  font-family: "Inter-Web";
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
 }
 .content.listPage .popupContent #close {
   height: 10px;
@@ -457,6 +505,7 @@ body.background_grey {
   bottom: 23px;
   z-index: 0;
   display: block;
+  width: 100%;
 }
 
 .previewbutton.active {
@@ -465,14 +514,14 @@ body.background_grey {
 
 .previewbutton ul li a.fullwidth::before {
   content: "";
-  height: 20px;
-  width: 20px;
-  background-image: url("/icons/eye.svg");
+  height: 10px;
+  width: 15px;
+  background-image: url(/icons/eye.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: contain;
-  top: 13px;
-  left: 14px;
+  top: 15px;
+  left: 15px;
   z-index: 5;
 }
 
@@ -485,7 +534,10 @@ body.background_grey {
 
 .radioToggle::before {
   content: "Light";
-  font-family: "Koulen";
+  font-family: "Inter-Web";
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
   color: white;
   -webkit-font-smoothing: antialiased;
   margin-right: 10px;
@@ -493,7 +545,10 @@ body.background_grey {
 
 .radioToggle::after {
   content: "Dark";
-  font-family: "Koulen";
+  font-family: "Inter-Web";
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
   color: white;
   -webkit-font-smoothing: antialiased;
   margin-left: 10px;
