@@ -309,7 +309,7 @@ body.background_grey {
 .content.listPage .itemGrid.colours img {
   border-radius: 70px;
 }
-.content.listPage .popup.hidden {
+.content.listPage .popup {
   display: none;
 }
 .content.listPage .popup.active {
@@ -364,7 +364,12 @@ body.background_grey {
   min-width: auto;
   padding-left: 35px;
   padding-right: 25px;
+  padding-top: 0;
+  padding-bottom: 0;
   position: relative;
+}
+.content.listPage .popup.active .popupContent .items a.active {
+  color: #202125;
 }
 .content.listPage .popup.active .popupContent .items a:after {
   content: "";
@@ -380,30 +385,47 @@ body.background_grey {
 .content.listPage .popup.active .popupContent #front::after {
   background-image: url(/icons/front_light.svg);
 }
+.content.listPage .popup.active .popupContent #front.active::after {
+  background-image: url(/icons/front_dark.svg);
+}
 .content.listPage .popup.active .popupContent #side::after {
   background-image: url(/icons/side_light.svg);
   height: 20px;
   width: 13px;
 }
+.content.listPage .popup.active .popupContent #side.active::after {
+  background-image: url(/icons/side_dark.svg);
+}
 .content.listPage .popup.active .popupContent #TopDown::after {
   background-image: url(/icons/topDown_light.svg);
+}
+.content.listPage .popup.active .popupContent #TopDown.active::after {
+  background-image: url(/icons/topDown_dark.svg);
 }
 .content.listPage .popup.active .popupContent #isometric::after {
   background-image: url(/icons/isometric_light.svg);
 }
+.content.listPage .popup.active .popupContent #isometric.active::after {
+  background-image: url(/icons/isometric_dark.svg);
+}
 .content.listPage .popup.active .popupContent #back::after {
   background-image: url(/icons/back_light.svg);
 }
+.content.listPage .popup.active .popupContent #back.active::after {
+  background-image: url(/icons/back_dark.svg);
+}
 .content.listPage .popup.active .popupContent #autoRotate::after {
   background-image: url(/icons/autoRotate_light.svg);
+}
+.content.listPage .popup.active .popupContent #autoRotate.active::after {
+  background-image: url(/icons/autoRotate_dark.svg);
 }
 .content.listPage .popup.active .popupContent .items a.bordered {
   max-height: 35px;
   padding-top: 0;
   padding-bottom: 0;
 }
-.content.listPage .popupContent::after {
-  content: "";
+.content.listPage .popupContent #close {
   height: 10px;
   width: 10px;
   position: absolute;
@@ -434,6 +456,11 @@ body.background_grey {
   position: sticky;
   bottom: 23px;
   z-index: 0;
+  display: block;
+}
+
+.previewbutton.active {
+  display: none;
 }
 
 .previewbutton ul li a.fullwidth::before {

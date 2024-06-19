@@ -104,7 +104,7 @@
         }
     }
 
-    .popup.hidden {
+    .popup {
         display: none;
     }
 
@@ -164,9 +164,13 @@
             min-width: auto;
             padding-left: 35px;
             padding-right: 25px;
+            padding-top: 0;
+            padding-bottom: 0;
             position: relative;
+        }
 
-
+        .items a.active {
+            color: #202125;
         }
 
         .items a:after {
@@ -185,26 +189,50 @@
             background-image: url(/icons/front_light.svg);
         }
 
+        #front.active::after {
+            background-image: url(/icons/front_dark.svg);
+        }
+
         #side::after {
             background-image: url(/icons/side_light.svg);
             height: 20px;
             width: 13px;
         }
 
+        #side.active::after {
+            background-image: url(/icons/side_dark.svg);
+        }
+
         #TopDown::after {
             background-image: url(/icons/topDown_light.svg);
+        }
+
+        #TopDown.active::after {
+            background-image: url(/icons/topDown_dark.svg);
         }
 
         #isometric::after {
             background-image: url(/icons/isometric_light.svg);
         }
 
+        #isometric.active::after {
+            background-image: url(/icons/isometric_dark.svg);
+        }
+
         #back::after {
             background-image: url(/icons/back_light.svg);
         }
 
+        #back.active::after {
+            background-image: url(/icons/back_dark.svg);
+        }
+
         #autoRotate::after {
             background-image: url(/icons/autoRotate_light.svg);
+        }
+
+        #autoRotate.active::after {
+            background-image: url(/icons/autoRotate_dark.svg);
         }
 
         .items a.bordered {
@@ -215,8 +243,7 @@
 
     }
 
-    .popupContent::after {
-        content: "";
+    .popupContent #close {
         height: 10px;
         width: 10px;
         position: absolute;
@@ -248,6 +275,11 @@
     position: sticky;
     bottom: 23px;
     z-index: 0;
+    display: block;
+}
+
+.previewbutton.active {
+    display: none;
 }
 
 .previewbutton ul li a.fullwidth::before {

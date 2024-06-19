@@ -26,6 +26,63 @@
 
       document.getElementById('tyres').addEventListener('click', showTyreGrid);
       document.getElementById('colours').addEventListener('click', showColourGrid);
+      document.getElementById('preview').addEventListener('click', showPopup);
+      document.getElementById('close').addEventListener('click', hidePopup);
+      
+      const tilesTyre = document.querySelectorAll('div.tileTyre');
+      const tilesColour = document.querySelectorAll('div.tileColour');
+      const viewingAngles = document.querySelectorAll('a.angleButton');
+
+      const data = {
+        "colour" : "placeholder",
+        "tyres" : "placeholder",
+        "viewingAngles" : {
+          "presetName" : {
+            "x" : 0,
+            "y" : 0,
+            "z" : 0,
+            "zoom" : 0
+          }
+        }
+      }
+
+      tilesTyre.forEach(function(elem) {
+
+        elem.addEventListener('click', function(){
+
+          for (let a = 0; a < tilesTyre.length; a++) {
+            tilesTyre[a].classList.remove('active');
+          }
+
+          this.classList.add('active');
+        })
+      })
+
+      tilesColour.forEach(function(elem) {
+
+        elem.addEventListener('click', function(){
+
+          for (let a = 0; a < tilesColour.length; a++) {
+            tilesColour[a].classList.remove('active');
+          }
+
+          this.classList.add('active');
+        })
+      })
+
+      viewingAngles.forEach(function(elem){
+
+        elem.addEventListener('click', function(){
+            
+          for (let a = 0; a < viewingAngles.length; a++) {
+            viewingAngles[a].classList.remove('active');
+            viewingAngles[a].classList.remove('solidWhite');
+          }
+
+          this.classList.add('active');
+          this.classList.add('solidWhite');
+        })
+      })
 
       function showTyreGrid() {
 
@@ -69,6 +126,16 @@
         this.classList.add('solidWhite');
 
         document.getElementById('colourGrid').classList.add('active');
+    }
+
+    function showPopup() {
+      document.getElementById('popup').classList.add('active')
+      this.classList.add('active');
+    }
+
+    function hidePopup() {
+      document.getElementById('popup').classList.remove('active');
+      document.getElementById('preview').classList.remove('active');
     }
   
     </script>    

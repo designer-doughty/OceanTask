@@ -38,42 +38,42 @@
                 </label>
             </div>
 
-            <div class="item active">
+            <div class="item tileTyre">
                 <a href="#">
                     <img src="/images/tyres/16inchSummer.png"/>
                     <h3>16" Alloy Summer Tread</h3>
                 </a>
             </div>
 
-            <div class="item">
+            <div class="item tileTyre">
                 <a href="#">
                     <img src="/images/tyres/16inchSummer.png"/>
                     <h3>16" Alloy Winter Tread</h3>
                 </a>
             </div>
 
-            <div class="item">
+            <div class="item tileTyre">
                 <a href="#">
                     <img src="/images/tyres/16inchSummer.png"/>
                     <h3>17" Alloy Summer Tread</h3>
                 </a>
             </div>
 
-            <div class="item">
+            <div class="item tileTyre">
                 <a href="#">
                     <img src="/images/tyres/16inchSummer.png"/>
                     <h3>17" Alloy Winter Tread</h3>
                 </a>
             </div>
 
-            <div class="item">
+            <div class="item tileTyre">
                 <a href="#">
                     <img src="/images/tyres/16inchSummer.png"/>
                     <h3>18" Alloy Summer Tread</h3>
                 </a>
             </div>
 
-            <div class="item">
+            <div class="item tileTyre">
                 <a href="#">
                     <img src="/images/tyres/16inchSummer.png"/>
                     <h3>18" Alloy Winter Tread</h3>
@@ -90,42 +90,42 @@
                 </label>
             </div>
 
-            <div class="item active">
+            <div class="item tileColour">
                 <a href="#">
                     <img src="/images/colours/metallic ocean green.png"/>
                     <h3>Metallic ocean green</h3>
                 </a>
             </div>
 
-            <div class="item">
+            <div class="item tileColour">
                 <a href="#">
                     <img src="/images/colours/black.png"/>
                     <h3>Black</h3>
                 </a>
             </div>
 
-            <div class="item">
+            <div class="item tileColour">
                 <a href="#">
                     <img src="/images/colours/metallic sand.png"/>
                     <h3>Metallic sand</h3>
                 </a>
             </div>
 
-            <div class="item">
+            <div class="item tileColour">
                 <a href="#">
                     <img src="/images/colours/metallic sky blue.png"/>
                     <h3>Metallic sky blue</h3>
                 </a>
             </div>
 
-            <div class="item">
+            <div class="item tileColour">
                 <a href="#">
                     <img src="/images/colours/metallic sunset orange.png"/>
                     <h3>Metallic sunset orange</h3>
                 </a>
             </div>
 
-            <div class="item">
+            <div class="item tileColour">
                 <a href="#">
                     <img src="/images/colours/red.png"/>
                     <h3>Red</h3>
@@ -133,17 +133,18 @@
             </div>
         </div>
 
-        <div class="popup hidden">
+        <div id="popup" class="popup">
             <div class="overlay">
                 <div class="popupContent">
+                    <div id="close"></div>
                     <h2>Update Viewing Angle</h2>
                     <div class="items">
-                        <a class="listItem bordered light" class="angleButton" id="front" href="#">Front</a>
-                        <a class="listItem bordered light" class="angleButton" id="side" href="#">Side</a>
-                        <a class="listItem bordered light" class="angleButton" id="TopDown" href="#">Top Down</a>
-                        <a class="listItem bordered light" class="angleButton" id="isometric" href="#">isometric</a>
-                        <a class="listItem bordered light" class="angleButton" id="back" href="#">Back</a>
-                        <a class="listItem bordered light" class="angleButton" id="autoRotate" href="#">Auto Rotate</a>
+                        <a class="listItem bordered light angleButton" id="front" href="#">Front</a>
+                        <a class="listItem bordered light angleButton" id="side" href="#">Side</a>
+                        <a class="listItem bordered light angleButton" id="TopDown" href="#">Top Down</a>
+                        <a class="listItem bordered light angleButton" id="isometric" href="#">isometric</a>
+                        <a class="listItem bordered light angleButton" id="back" href="#">Back</a>
+                        <a class="listItem bordered light angleButton" id="autoRotate" href="#">Auto Rotate</a>
                     </div>
                 </div>
             </div>
@@ -151,7 +152,7 @@
 
     </div>
 
-    <div class="previewbutton">
+    <div id="preview" class="previewbutton">
         <ul>
             <li>
                 <a class="fullwidth bordered light" href=#>Preview</a>
@@ -168,6 +169,63 @@
 
       document.getElementById('tyres').addEventListener('click', showTyreGrid);
       document.getElementById('colours').addEventListener('click', showColourGrid);
+      document.getElementById('preview').addEventListener('click', showPopup);
+      document.getElementById('close').addEventListener('click', hidePopup);
+      
+      const tilesTyre = document.querySelectorAll('div.tileTyre');
+      const tilesColour = document.querySelectorAll('div.tileColour');
+      const viewingAngles = document.querySelectorAll('a.angleButton');
+
+      const data = {
+        "colour" : "placeholder",
+        "tyres" : "placeholder",
+        "viewingAngles" : {
+          "presetName" : {
+            "x" : 0,
+            "y" : 0,
+            "z" : 0,
+            "zoom" : 0
+          }
+        }
+      }
+
+      tilesTyre.forEach(function(elem) {
+
+        elem.addEventListener('click', function(){
+
+          for (let a = 0; a < tilesTyre.length; a++) {
+            tilesTyre[a].classList.remove('active');
+          }
+
+          this.classList.add('active');
+        })
+      })
+
+      tilesColour.forEach(function(elem) {
+
+        elem.addEventListener('click', function(){
+
+          for (let a = 0; a < tilesColour.length; a++) {
+            tilesColour[a].classList.remove('active');
+          }
+
+          this.classList.add('active');
+        })
+      })
+
+      viewingAngles.forEach(function(elem){
+
+        elem.addEventListener('click', function(){
+            
+          for (let a = 0; a < viewingAngles.length; a++) {
+            viewingAngles[a].classList.remove('active');
+            viewingAngles[a].classList.remove('solidWhite');
+          }
+
+          this.classList.add('active');
+          this.classList.add('solidWhite');
+        })
+      })
 
       function showTyreGrid() {
 
@@ -211,6 +269,16 @@
         this.classList.add('solidWhite');
 
         document.getElementById('colourGrid').classList.add('active');
+    }
+
+    function showPopup() {
+      document.getElementById('popup').classList.add('active')
+      this.classList.add('active');
+    }
+
+    function hidePopup() {
+      document.getElementById('popup').classList.remove('active');
+      document.getElementById('preview').classList.remove('active');
     }
   
     </script>    
